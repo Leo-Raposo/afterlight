@@ -1,43 +1,43 @@
 import { Component } from '@angular/core';
-import { AxiosService } from '../../services/axios.service';  // Adjust the path as needed
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';  // Optional if using reactive forms
+import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
+import { AuthService } from '../../services/auth.service';
+import { Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-signin',
   standalone: true,
-  imports: [],
+  imports: [ReactiveFormsModule, CommonModule],
   templateUrl: './signin.component.html',
-  styleUrls: ['./signin.component.css']  // Corrected to `styleUrls`
+  styleUrls: ['./signin.component.css']
 })
 export class SigninComponent {
-  signInForm: FormGroup;
+  loginForm: FormGroup;
 
-  constructor(private axiosService: AxiosService, private fb: FormBuilder) {
-    // Initialize the form with reactive forms (optional)
-    this.signInForm = this.fb.group({
+  constructor(
+    private fb: FormBuilder,
+    private authService: AuthService,
+    private router: Router
+  ) {
+    this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required]]
+      password: ['', [Validators.required, Validators.minLength(6)]],
     });
   }
 
-  onSubmit(event: Event): void {
-    event.preventDefault();
 
-    if (this.signInForm.valid) {
-      const credentials = this.signInForm.value;
-
-      // Using the axios service to send a POST request
-      this.axiosService.postRequest('/auth/signin', credentials)
-        .then(response => {
-          console.log('Sign-in successful', response);
-          // Handle successful sign-in (e.g., store token, redirect)
-        })
-        .catch(error => {
-          console.error('Sign-in error', error);
-          // Handle error (e.g., display error message to user)
-        });
-    } else {
-      console.warn('Form is not valid');
+  async onSubmit(): Promise<void> {
+    if (this.loginForm.valid) {
+      const { email, password } = this.loginForm.value;
+  
+      try {
+        // Ajuste o nome do campo para "login" em vez de "username"
+        const response = await this.authService.login({ login: email, password }); // Pass email as login
+        localStorage.setItem('token', response.token); // Caso a resposta esteja em response.data
+        this.router.navigate(['/home']);
+      } catch (error) {
+        console.error('Login failed:', error);
+      }
     }
   }
 }

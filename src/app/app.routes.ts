@@ -1,8 +1,11 @@
 import { Routes } from '@angular/router';
-import { SignupComponent } from './components/signup/signup.component';
 import { SigninComponent } from './components/signin/signin.component';
+import { SignupComponent } from './components/signup/signup.component';
+import { SliderComponent } from './components/home/home.component'; // Adjust path if needed
 
 export const routes: Routes = [
-    { path: 'signup', component: SignupComponent },
-    { path: 'signin', component: SigninComponent }
+  { path: 'signin', component: SigninComponent },
+  { path: 'signup', component: SignupComponent },
+  { path: 'home', component: SliderComponent },
+  { path: '', redirectTo: 'signin', pathMatch: 'full' } // Default route
 ];
