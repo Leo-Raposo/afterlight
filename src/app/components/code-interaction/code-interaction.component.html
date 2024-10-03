@@ -1,0 +1,25 @@
+<div class="code-header">
+    <h2 class="section-title">Your Code</h2>
+    <button class="submit-button" (click)="submitCode()">Submit</button>
+</div>
+
+<section class="code-interaction">
+    <header class="file-header">
+        <div class="file-tab">
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/3605b226cc238811f5ac60d27af97959f3e88e58eb9c2c4ede65eb7a6e95792d?placeholderIfAbsent=true&apiKey=488eda03dadc464d9f061e6f2fbf3e3d"
+                alt="" class="file-icon" />
+            <span class="file-name">JavaScript</span>
+        </div>
+    </header>
+
+    <div class="code-content">
+        <div class="line-numbers">
+            <ng-container *ngFor="let number of lineNumbers">
+                <span>{{ number }}</span><br />
+            </ng-container>
+        </div>
+        <pre class="code-snippet">
+        <code [innerHTML]="codeSnippet | highlightCode"></code>
+      </pre>
+    </div>
+</section>

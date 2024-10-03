@@ -1,18 +1,21 @@
 import { Component } from '@angular/core';
-import { RouterOutlet, RouterModule } from '@angular/router'; // Import RouterModule
+import { RouterOutlet, RouterModule } from '@angular/router';
 import { SigninComponent } from './components/signin/signin.component';
 import { SignupComponent } from './components/signup/signup.component';
-import { SliderComponent } from './components/home/home.component'; // Import any other components you need
+import { SliderComponent } from './components/home/home.component';
+import { CodePageComponent } from './components/code-page/code-page.component';
+
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
-    RouterOutlet, // Ensure RouterOutlet is imported
-    RouterModule, // Import RouterModule to handle routing
-    SigninComponent, // Import your standalone components
+    RouterOutlet,
+    RouterModule,
+    SigninComponent,
     SignupComponent,
-    SliderComponent
+    SliderComponent,
+    CodePageComponent
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']

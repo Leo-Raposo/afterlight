@@ -1,0 +1,115 @@
+.code-interaction {
+    border-radius: 18px;
+    background-color: #141723;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    color: rgba(255, 255, 255, 0.8);
+    box-sizing: border-box;
+    position: relative;
+}
+
+.code-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    margin-bottom: 30px;
+    width: 100%;
+    background-color: transparent;
+}
+
+.section-title {
+    color: #817cc9;
+    font-size: 20px;
+    font-weight: 500;
+    margin: 0;
+}
+
+.submit-button {
+    font-feature-settings: "liga" off, "clig" off;
+    border-radius: 3px;
+    background-color: #141723;
+    box-shadow: 0 0 10px rgba(162, 162, 162, 0.25);
+    min-height: 32px;
+    font-size: 11px;
+    color: #fff;
+    font-weight: 400;
+    text-align: center;
+    padding: 9px 10px;
+    border: 1px solid #2b2e3a;
+    cursor: pointer;
+}
+
+.file-header {
+    border-radius: 18px 9px 0 0;
+    background-color: #1b2031;
+    border-bottom: 1px solid #2b2e3a;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    white-space: nowrap;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.file-tab {
+    background-color: #151927;
+    border-right: 1px solid #272a37;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 17px;
+}
+
+.file-icon {
+    width: 18px;
+}
+
+.file-name {
+    font-size: 14px;
+    color: #ffffff;
+}
+
+.code-content {
+    display: flex;
+    align-items: start;
+    gap: 10px;
+    padding: 20px;
+    font: 700 16px 'Roboto Mono', monospace;
+    background-color: #151927;
+    border-radius: 0 0 18px 18px;
+    border: 1px solid #2b2e3a;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.line-numbers {
+    text-align: right;
+    padding-right: 10px;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 14px;
+}
+
+.code-snippet {
+    flex-grow: 1;
+    font-size: 14px;
+    color: #ffffff;
+    overflow-x: auto;
+    white-space: pre;
+}
+
+@media (max-width: 991px) {
+    .code-content {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .line-numbers {
+        padding-right: 5px;
+    }
+
+    .code-snippet {
+        font-size: 13px;
+    }
+}

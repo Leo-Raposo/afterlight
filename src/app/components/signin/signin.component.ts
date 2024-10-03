@@ -29,11 +29,10 @@ export class SigninComponent {
   async onSubmit(): Promise<void> {
     if (this.loginForm.valid) {
       const { email, password } = this.loginForm.value;
-  
+
       try {
-        // Ajuste o nome do campo para "login" em vez de "username"
-        const response = await this.authService.login({ login: email, password }); // Pass email as login
-        localStorage.setItem('token', response.token); // Caso a resposta esteja em response.data
+        const response = await this.authService.login({ login: email, password });
+        localStorage.setItem('token', response.token);
         this.router.navigate(['/home']);
       } catch (error) {
         console.error('Login failed:', error);
