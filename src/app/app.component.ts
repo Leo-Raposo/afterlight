@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { RouterOutlet, RouterModule } from '@angular/router';
-import { SigninComponent } from './components/signin/signin.component';
-import { SignupComponent } from './components/signup/signup.component';
-import { SliderComponent } from './components/home/home.component';
-import { CodePageComponent } from './components/code-page/code-page.component';
+import { SigninComponent } from './pages/signin/signin.component';
+import { SignupComponent } from './pages/signup/signup.component';
+import { HomeComponent } from './pages/home/home.component';
+import { CodePageComponent } from './pages/code-page/code-page.component';
 
 
 @Component({
@@ -14,7 +14,7 @@ import { CodePageComponent } from './components/code-page/code-page.component';
     RouterModule,
     SigninComponent,
     SignupComponent,
-    SliderComponent,
+    HomeComponent,
     CodePageComponent
   ],
   templateUrl: './app.component.html',
