@@ -1,29 +1,50 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import * as monaco from 'monaco-editor';
+import { Component, ElementRef, AfterViewInit, ViewChild, OnDestroy, Inject, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-monaco-editor',
   standalone: true,
   imports: [],
   templateUrl: './monaco-editor.component.html',
-  styleUrl: './monaco-editor.component.css'
+  styleUrls: ['./monaco-editor.component.css']
 })
-export class MonacoEditorComponent implements OnInit {
-  @ViewChild('editorContainer', { static: true }) editorContainer!: ElementRef;
+export class MonacoEditorComponent implements AfterViewInit, OnDestroy {
+  @ViewChild('editorContainer', { static: false }) editorContainer!: ElementRef;
+  private editorInstance: any;
 
-  ngOnInit() {
-    this.initMonaco();
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
+
+  async ngAfterViewInit() {
+    if (isPlatformBrowser(this.platformId)) {
+      try {
+        const monaco = await import('monaco-editor');
+        this.initMonaco(monaco);
+      } catch (error) {
+        console.error('Error loading Monaco Editor:', error);
+      }
+    }
   }
 
-  private initMonaco() {
-    monaco.editor.create(this.editorContainer.nativeElement, {
+  private initMonaco(monaco: typeof import('monaco-editor')) {
+    if (!this.editorContainer) {
+      return;
+    }
+
+    this.editorInstance = monaco.editor.create(this.editorContainer.nativeElement, {
       value: [
         'function helloWorld() {',
         '\tconsole.log("Hello, world!");',
         '}'
       ].join('\n'),
       language: 'javascript',
-      theme: 'vs-dark'
+      theme: 'vs-dark',
+      automaticLayout: true
     });
+  }
+
+  ngOnDestroy() {
+    if (this.editorInstance) {
+      this.editorInstance.dispose();
+    }
   }
 }
