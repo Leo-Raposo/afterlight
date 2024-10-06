@@ -17,6 +17,7 @@
     margin-bottom: 30px;
     width: 100%;
     background-color: transparent;
+    height: 32px;
 }
 
 .section-title {
@@ -42,7 +43,7 @@
 }
 
 .file-header {
-    border-radius: 18px 9px 0 0;
+    border-radius: 18px 18px 0px 0px;
     background-color: #1b2031;
     border-bottom: 1px solid #2b2e3a;
     display: flex;
