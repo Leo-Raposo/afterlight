@@ -4,7 +4,9 @@
     flex-direction: column;
     overflow: hidden;
     align-items: start;
-    padding: 0 68px 118px 28px;
+    min-width: 100vw;
+    min-height: 100vh;
+    padding: 32px;
 }
 
 .header {
@@ -17,15 +19,6 @@
     letter-spacing: -0.8px;
     text-align: left;
     font: 400 40px/80px ArdelaEdgeX03-Regular, -apple-system, Roboto, Helvetica, sans-serif;
-}
-
-.content {
-    display: flex;
-    margin-top: 74px;
-    width: 100%;
-    max-width: 1010px;
-    flex-direction: column;
-    font-family: Inter, sans-serif;
 }
 
 .top-bar {
@@ -48,32 +41,4 @@
     color: #817cc9;
     font-size: 24px;
     font-weight: 500;
-}
-
-.interaction-area {
-    display: flex;
-    gap: 100px;
-    width: 100%;
-    justify-content: space-between;
-    align-items: flex-start;
-}
-
-@media (max-width: 991px) {
-    .main-page {
-        padding: 0 20px 100px;
-    }
-
-    .content {
-        max-width: 100%;
-        margin-top: 40px;
-    }
-
-    .interaction-area {
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .chat-title {
-        margin-left: 0;
-    }
 }

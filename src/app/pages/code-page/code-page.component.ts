@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { CodeInteractionComponent } from '../code-interaction/code-interaction.component';
-import { ChatInteractionComponent } from '../chat-interaction/chat-interaction.component';
+import { CodeInteractionComponent } from '../../components/code-interaction/code-interaction.component';
+import { ChatInteractionComponent } from '../../components/chat-interaction/chat-interaction.component';
 
 @Component({
   selector: 'app-code-page',

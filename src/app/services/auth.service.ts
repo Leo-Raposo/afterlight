@@ -34,9 +34,9 @@ export class AuthService {
     }
   }
 
-  async login(credentials: { login: string, password: string }): Promise<any> {
+  async login(credentials: { email: string, password: string }): Promise<any> {
     try {
-      const response = await axios.post(`${this.apiUrl}/auth/login`, credentials);
+      const response = await axios.post(`${this.apiUrl}/api/users/login`, credentials);
       return response.data;
     } catch (error: any) {
       console.error('Login failed:', error.response || error);
@@ -44,9 +44,9 @@ export class AuthService {
     }
   }
   
-  async register(user: { login: string, password: string, role: string }): Promise<any> {
+  async register(user: { username: string, email: string, password: string }): Promise<any> {
     try {
-      const response = await axios.post(`${this.apiUrl}/auth/register`, user);
+      const response = await axios.post(`${this.apiUrl}/api/users/register`, user);
       return response.data;
     } catch (error: any) {
       throw error.response ? error.response.data : error;

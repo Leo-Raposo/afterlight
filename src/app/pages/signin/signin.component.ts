@@ -31,7 +31,7 @@ export class SigninComponent {
       const { email, password } = this.loginForm.value;
 
       try {
-        const response = await this.authService.login({ login: email, password });
+        const response = await this.authService.login({ email, password });
         localStorage.setItem('token', response.token);
         this.router.navigate(['/home']);
       } catch (error) {

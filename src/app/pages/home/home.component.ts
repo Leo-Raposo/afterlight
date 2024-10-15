@@ -9,6 +9,6 @@ import { TweenMax, TimelineMax, Power4, Expo, Linear } from 'gsap';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class SliderComponent {
+export class HomeComponent {
 
 }
