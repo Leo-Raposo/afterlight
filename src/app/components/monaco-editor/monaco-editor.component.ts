@@ -12,7 +12,7 @@ export class MonacoEditorComponent implements AfterViewInit, OnDestroy {
   @ViewChild('editorContainer', { static: false }) editorContainer!: ElementRef;
   private editorInstance: any;
 
-  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) { }
 
   async ngAfterViewInit() {
     if (isPlatformBrowser(this.platformId)) {

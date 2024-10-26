@@ -1,75 +1,40 @@
-<nav class="nav nav--left js-nav">
-    <ul>
-        <li><a href="#"><span>Mens</span></a></li>
-        <li><a href="#"><span>Womens</span></a></li>
-        <li><a href="#" class="is-active"><span>Collections</span></a></li>
-    </ul>
-</nav>
-
-<figure class="logo">
-    <img src="">
-</figure>
-
-<nav class="nav nav--right">
-    <ul>
-        <li><a href="https://twitter.com/Jesper_Landberg?lang=en" target="_blank"><span>Say hi</span></a></li>
-        <li>
-            <a href="#"><span>Cart</span>
-                <div class="cart-total">0</div>
-            </a>
-        </li>
-    </ul>
-</nav>
-
-<div class="slider js-slider">
-    <div class="slider__inner js-slider__inner"></div>
-
-    <!-- Slide 1 -->
-    <div class="slide js-slide">
-        <div class="slide__content">
-            <figure class="slide__img js-slide__img">
-                <img src="">
-            </figure>
-            <figure class="slide__img js-slide__img">
-                <img src="">
-            </figure>
+<section class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">
+            <!-- Página 1 -->
+            <section class="hero-section">
+                <img loading="lazy"
+                    src="https://cdn.builder.io/api/v1/image/assets/488eda03dadc464d9f061e6f2fbf3e3d/d1a92af977486f068dc5669ca5ad0bd6b6d23ee67e9703225ec0b3918147fdda?apiKey=488eda03dadc464d9f061e6f2fbf3e3d&"
+                    class="hero-background" alt="" role="presentation" />
+                <h1 class="brand-logo">A</h1>
+                <section class="hero-content">
+                    <p class="tagline">AfterLight</p>
+                    <h2 class="main-heading">A New Way of Coding</h2>
+                </section>
+                <app-custom-button></app-custom-button>
+            </section>
         </div>
-        <div class="slider__text js-slider__text">
-            <div class="slider__text-line js-slider__text-line">
-                <div>Black is</div>
-            </div>
-            <div class="slider__text-line js-slider__text-line">
-                <div>timeless. Black is</div>
-            </div>
-            <div class="slider__text-line js-slider__text-line">
-                <div>the colour of</div>
-            </div>
-            <div class="slider__text-line js-slider__text-line">
-                <div>Eternity.</div>
-            </div>
+        <div class="swiper-slide">
+            <!-- Página 2 -->
+            <section class="page-section">
+                <app-home-page2></app-home-page2>
+            </section>
         </div>
+        <div class="swiper-slide">
+            <!-- Página 3 -->
+            <section class="page-section">
+                <app-home-page3></app-home-page3>
+            </section>
+        </div>
+        <div class="swiper-slide">
+            <!-- Página 4 -->
+            <section class="page-section">
+                <app-home-page4></app-home-page4>
+            </section>
+        </div>
+
     </div>
 
-    <!-- Other slides omitted for brevity -->
-
-    <nav class="slider__nav js-slider__nav">
-        <div class="slider-bullet js-slider-bullet">
-            <span class="slider-bullet__text js-slider-bullet__text">01</span>
-            <span class="slider-bullet__line js-slider-bullet__line"></span>
-        </div>
-        <div class="slider-bullet js-slider-bullet">
-            <span class="slider-bullet__text js-slider-bullet__text">02</span>
-            <span class="slider-bullet__line js-slider-bullet__line"></span>
-        </div>
-        <div class="slider-bullet js-slider-bullet">
-            <span class="slider-bullet__text js-slider-bullet__text">03</span>
-            <span class="slider-bullet__line js-slider-bullet__line"></span>
-        </div>
-    </nav>
-
-    <div class="scroll js-scroll">Scroll</div>
-</div>
-
-<div class="vert-text">
-    <span>Wings+Horns<br> X Kyoto Black</span>
-</div>
+    <!-- Adicione a paginação -->
+    <div class="swiper-pagination"></div>
+</section>

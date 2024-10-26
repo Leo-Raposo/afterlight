@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { HighlightCodePipe } from '../../pipe/highlight-code.pipe'; // Adjusted pathimport { NgModule } from '@angular/core';
+import { HighlightCodePipe } from '../../pipe/highlight-code.pipe';
 import { CommonModule } from '@angular/common';
 import { MonacoEditorComponent } from '../monaco-editor/monaco-editor.component';
 

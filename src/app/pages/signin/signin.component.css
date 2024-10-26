@@ -26,6 +26,8 @@ main {
     letter-spacing: -0.8px;
     text-align: center;
     font: 40px/80px ArdelaEdgeX03-Regular, -apple-system, Roboto, Helvetica, sans-serif;
+    cursor: pointer;
+
 }
 
 .form-container {
@@ -56,10 +58,10 @@ main {
 }
 
 .form-input {
-    width: 100%;
     border-radius: 8px;
     background-color: #141723;
-    max-height: 30px;
+    width: 317px;
+    max-width: 100%;
     color: #9a9b9f;
     padding: 15px 12px;
     border: 1px solid #2b2e3a;

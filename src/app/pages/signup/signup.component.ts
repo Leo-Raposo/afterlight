@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { AuthService } from '../../services/auth.service'; // Ajuste o caminho de acordo com seu projeto
+import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -32,11 +32,15 @@ export class SignupComponent {
       const { name, email, password } = this.signupForm.value;
 
       try {
-        await this.authService.register({username: name, email, password });
-        this.router.navigate(['/signin']); // Redireciona para a página de login após o registro
+        await this.authService.register({ username: name, email, password });
+        this.router.navigate(['/signin']);
       } catch (error) {
         console.error('Registration failed:', error);
       }
     }
+  }
+
+  navigateToHome(): void {
+    this.router.navigate(['/home']);
   }
 }

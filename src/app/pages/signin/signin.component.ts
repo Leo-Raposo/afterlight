@@ -25,7 +25,6 @@ export class SigninComponent {
     });
   }
 
-
   async onSubmit(): Promise<void> {
     if (this.loginForm.valid) {
       const { email, password } = this.loginForm.value;
@@ -38,5 +37,9 @@ export class SigninComponent {
         console.error('Login failed:', error);
       }
     }
+  }
+
+  navigateToHome(): void {
+    this.router.navigate(['/home']);
   }
 }

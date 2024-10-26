@@ -26,6 +26,7 @@ main {
     letter-spacing: -0.8px;
     text-align: center;
     font: 40px/80px ArdelaEdgeX03-Regular, -apple-system, Roboto, Helvetica, sans-serif;
+    cursor: pointer;
 }
 
 .sign-up-form-container {

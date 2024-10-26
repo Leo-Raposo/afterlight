@@ -10,7 +10,6 @@ export class AuthService {
 
   constructor() { }
 
-  // Method to check if the user is authenticated
   async isAuthenticated(): Promise<boolean> {
     const token = localStorage.getItem('token');
     if (!token) {
@@ -24,12 +23,10 @@ export class AuthService {
         }
       });
 
-      // If the backend response indicates success, the user is authenticated
       return response.status === 200;
     } catch (error) {
-      // If an error occurs, assume the token is invalid or expired
       console.error('Token validation failed:', error);
-      localStorage.removeItem('token'); // Remove the token if it's invalid
+      localStorage.removeItem('token');
       return false;
     }
   }
@@ -43,7 +40,7 @@ export class AuthService {
       throw error;
     }
   }
-  
+
   async register(user: { username: string, email: string, password: string }): Promise<any> {
     try {
       const response = await axios.post(`${this.apiUrl}/api/users/register`, user);
