@@ -16,7 +16,14 @@
     border-radius: 12px;
     border: 1px solid #1d263f;
     display: flex;
-    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.exercise-content {
+    display: flex;
+    width: 100%;
     justify-content: space-between;
     align-items: center;
 }
@@ -35,11 +42,11 @@
 .exercise-title {
     font: 500 20px/1.2 Work Sans, -apple-system, Roboto, Helvetica, sans-serif;
     color: #aeb9e1;
-    margin: auto 0;
+    margin: 0;
 }
 
 .status-icon {
     width: 30px;
-    aspect-ratio: 1;
+    height: 30px;
     object-fit: contain;
 }
