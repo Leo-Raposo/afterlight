@@ -1,3 +1,9 @@
+body,
+html {
+    overflow: hidden;
+    height: 100%;
+}
+
 .dashboard-container {
     background-color: rgb(1, 2, 19);
     display: flex;
