@@ -5,14 +5,18 @@ import { SigninComponent } from './pages/signin/signin.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { HomeComponent } from './pages/home/home.component';
 import { CodePageComponent } from './pages/code-page/code-page.component';
+import { DashboardLayout } from './pages/dashboard-layout/dashboard-layout.component';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, RouterModule, SigninComponent, SignupComponent, HomeComponent, CodePageComponent],
+  imports: [RouterOutlet, RouterModule, SigninComponent, SignupComponent, HomeComponent, CodePageComponent, DashboardLayout],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   animations: [
     trigger('routeAnimations', [
       transition('* <=> *', [
