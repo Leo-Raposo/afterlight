@@ -31,13 +31,16 @@
 }
 
 .grid-cols-2 {
-    justify-content: center;
-    margin: 0 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 100px;
+    margin: auto;
+    max-width: 90vw;
 }
+
 
 .code-interaction,
 .chat-interaction {
-    width: 48%;
-    min-height: 700px;
+    max-width: 50vw;
+    width: 100%;
 }

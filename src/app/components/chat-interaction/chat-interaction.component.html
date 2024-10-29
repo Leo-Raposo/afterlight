@@ -12,7 +12,8 @@
                 <div *ngIf="message.sender === 'AfterLight'" class="avatar avatar-placeholder"></div>
                 <span class="sender-name">{{message.sender}}</span>
             </div>
-            <p class="message-content">{{message.content}}</p>
+            <!-- Renderiza o conteúdo de Markdown convertido para HTML -->
+            <p class="message-content" [innerHTML]="message.htmlContent"></p>
         </div>
         <div class="input-area">
             <input type="text" class="chat-input" placeholder="Type your message..." aria-label="Type your message">
