@@ -1,5 +1,6 @@
 .main-page {
     background-color: #010213;
+    background-image: url('https://cdn.builder.io/api/v1/image/assets/488eda03dadc464d9f061e6f2fbf3e3d/c6747d71f4b516f6805ec43deffb1110a7cde16e48246ce29f90e8fde5096de0?apiKey=488eda03dadc464d9f061e6f2fbf3e3d&');
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -29,16 +30,14 @@
     width: 100%;
 }
 
-.section-title {
-    color: #817cc9;
-    font-size: 24px;
-    font-weight: 500;
-    margin: 0;
+.grid-cols-2 {
+    justify-content: center;
+    margin: 0 40px;
+    gap: 100px;
 }
 
-.chat-title {
-    margin-left: 20px;
-    color: #817cc9;
-    font-size: 24px;
-    font-weight: 500;
+.code-interaction,
+.chat-interaction {
+    width: 48%;
+    min-height: 700px;
 }

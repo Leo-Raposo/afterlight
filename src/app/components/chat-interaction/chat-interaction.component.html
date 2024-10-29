@@ -1,19 +1,21 @@
-<div class="code-header">
-    <h2 class="section-title">Chat Interaction</h2>
-</div>
+<div class="chat-page">
+    <div class="code-header">
+        <h2 class="section-title">Chat Interaction</h2>
+    </div>
 
-<section class="chat-interaction">
-    <div class="message" *ngFor="let message of messages">
-        <div class="message-header">
-            <img *ngIf="message.sender === 'Lorem Ipsum'"
-                src="https://cdn.builder.io/api/v1/image/assets/TEMP/be0c9e2dab6d3e87249f22f8f338ee80ab10465a4fadd37e6903bbce620f4b31?placeholderIfAbsent=true&apiKey=488eda03dadc464d9f061e6f2fbf3e3d"
-                alt="" class="avatar" />
-            <div *ngIf="message.sender === 'AfterLight'" class="avatar avatar-placeholder"></div>
-            <span class="sender-name">{{message.sender}}</span>
+    <section class="chat-interaction">
+        <div class="message" *ngFor="let message of messages">
+            <div class="message-header">
+                <img *ngIf="message.sender === 'Lorem Ipsum'"
+                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/be0c9e2dab6d3e87249f22f8f338ee80ab10465a4fadd37e6903bbce620f4b31?placeholderIfAbsent=true&apiKey=488eda03dadc464d9f061e6f2fbf3e3d"
+                    alt="" class="avatar" />
+                <div *ngIf="message.sender === 'AfterLight'" class="avatar avatar-placeholder"></div>
+                <span class="sender-name">{{message.sender}}</span>
+            </div>
+            <p class="message-content">{{message.content}}</p>
         </div>
-        <p class="message-content">{{message.content}}</p>
-    </div>
-    <div class="input-area">
-        <input type="text" class="chat-input" placeholder="Type your message..." aria-label="Type your message">
-    </div>
-</section>
+        <div class="input-area">
+            <input type="text" class="chat-input" placeholder="Type your message..." aria-label="Type your message">
+        </div>
+    </section>
+</div>

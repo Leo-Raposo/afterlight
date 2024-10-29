@@ -1,6 +1,7 @@
 main {
     width: 100vw;
     height: 100vh;
+    background-image: url('https://cdn.builder.io/api/v1/image/assets/488eda03dadc464d9f061e6f2fbf3e3d/c6747d71f4b516f6805ec43deffb1110a7cde16e48246ce29f90e8fde5096de0?apiKey=488eda03dadc464d9f061e6f2fbf3e3d&');
 }
 
 :host {
@@ -13,7 +14,7 @@ main {
     flex-direction: column;
     overflow: hidden;
     align-items: center;
-    padding: 0 80px 180px 28px;
+    padding: 0 80px 0px 28px;
     font: 400 12px Inter, sans-serif;
 }
 

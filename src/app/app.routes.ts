@@ -15,6 +15,6 @@ export const routes: Routes = [
   { path: 'dashboard', component: DashboardLayout, data: { animation: 'DashboardPage' } },
   { path: 'trails', component: TrailsComponent, data: { animation: 'TrailsPage' } },
   { path: 'rank', component: RankLayoutComponent, data: { animation: 'RankPage' } },
-  { path: '', redirectTo: 'rank', pathMatch: 'full' }
+  { path: '', redirectTo: 'code-page', pathMatch: 'full' }
 ];
 
