@@ -18,3 +18,11 @@
         </pre>
     </div>
 </section>
+
+<div class="popup-overlay" *ngIf="showPopup">
+    <div class="popup-content-transparent">
+        <app-mini-card
+            [imageUrl]="'https://cdn.builder.io/api/v1/image/assets/488eda03dadc464d9f061e6f2fbf3e3d/2cd136655ce663ff3a3a2c758ab1ea1eb27971ca1a83b8cf7ecacbfdaccf9555?apiKey=488eda03dadc464d9f061e6f2fbf3e3d&'"
+            imageAlt="Popup image"></app-mini-card>
+    </div>
+</div>

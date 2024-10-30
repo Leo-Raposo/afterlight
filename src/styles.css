@@ -1,5 +1,6 @@
 @import './tailwind.config.css';
 
+
 html,
 body,
 div,
@@ -106,6 +107,8 @@ section {
 
 body {
     line-height: 1;
+    background-color: #141723;
+
 }
 
 

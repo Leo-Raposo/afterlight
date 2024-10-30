@@ -1,0 +1,31 @@
+.mini-card {
+    display: flex;
+    max-width: 337px;
+    flex-direction: column;
+    position: relative;
+}
+
+.mini-card__image {
+    aspect-ratio: 0.86;
+    object-fit: contain;
+    object-position: center;
+    width: 100%;
+    border-radius: 0;
+}
+
+.navigate-arrow {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: transparent;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.navigate-arrow:hover {
+    color: transparent;
+}
