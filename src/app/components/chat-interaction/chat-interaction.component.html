@@ -8,11 +8,11 @@
             <div class="message-header">
                 <img *ngIf="message.sender === 'Lorem Ipsum'"
                     src="https://cdn.builder.io/api/v1/image/assets/TEMP/be0c9e2dab6d3e87249f22f8f338ee80ab10465a4fadd37e6903bbce620f4b31?placeholderIfAbsent=true&apiKey=488eda03dadc464d9f061e6f2fbf3e3d"
-                    alt="" class="avatar" />
-                <div *ngIf="message.sender === 'AfterLight'" class="avatar avatar-placeholder"></div>
+                    alt="Lorem Ipsum avatar" class="avatar" />
+                <img *ngIf="message.sender === 'AfterLight'" src="https://i.ibb.co/MBC5kmP/logo.png"
+                    alt="AfterLight logo" class="avatar" />
                 <span class="sender-name">{{message.sender}}</span>
             </div>
-            <!-- Renderiza o conteúdo de Markdown convertido para HTML -->
             <p class="message-content" [innerHTML]="message.htmlContent"></p>
         </div>
         <div class="input-area">
