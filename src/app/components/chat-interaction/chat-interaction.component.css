@@ -1,11 +1,27 @@
-.chat-page {
-    width: 485px;
+.chat-messages-container {
+    height: 450px;
+    overflow-y: auto;
+}
+
+.submit-button {
+    font-feature-settings: "liga" off, "clig" off;
+    border-radius: 3px;
+    background-color: #141723;
+    box-shadow: 0 0 10px rgba(162, 162, 162, 0.25);
+    min-height: 32px;
+    font-size: 18px;
+    color: #fff;
+    font-weight: 400;
+    text-align: center;
+    padding: 9px 10px;
+    border: 1px solid #2b2e3a;
+    cursor: pointer;
 }
 
 .code-header {
     display: flex;
     justify-content: space-between;
-    align-items: left;
+    align-items: center;
     padding: 0;
     margin-bottom: 30px;
     width: 100%;
@@ -16,7 +32,7 @@
 .section-title {
     color: #817cc9;
     font-size: 20px;
-    font: 500 24px/1 Inter, sans-serif;
+    font-weight: 500;
     margin: 0;
 }
 
@@ -65,14 +81,10 @@
 .message-content {
     border-radius: 8px;
     background-color: #151927;
-    width: 100%;
-    height: auto;
-    max-height: 300px;
-    /* Define uma altura máxima */
-    overflow-y: auto;
     margin-top: 6px;
+    font-size: 12px;
     color: #fff;
-    font: 500 12px/1 Inter, sans-serif;
+    font-weight: 300;
     line-height: 14px;
     padding: 11px 9px;
     border: 1px solid #2b2e3a;

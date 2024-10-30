@@ -4,7 +4,6 @@ import { isPlatformBrowser } from '@angular/common';
 @Component({
   selector: 'app-monaco-editor',
   standalone: true,
-  imports: [],
   templateUrl: './monaco-editor.component.html',
   styleUrls: ['./monaco-editor.component.css']
 })
@@ -12,7 +11,7 @@ export class MonacoEditorComponent implements AfterViewInit, OnDestroy {
   @ViewChild('editorContainer', { static: false }) editorContainer!: ElementRef;
   private editorInstance: any;
 
-  constructor(@Inject(PLATFORM_ID) private platformId: Object) { }
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
 
   async ngAfterViewInit() {
     if (isPlatformBrowser(this.platformId)) {
@@ -30,6 +29,30 @@ export class MonacoEditorComponent implements AfterViewInit, OnDestroy {
       return;
     }
 
+    monaco.editor.defineTheme('draculaTheme', {
+      base: 'vs-dark',
+      inherit: true,
+      rules: [
+        { token: 'comment', foreground: '6272a4', fontStyle: 'italic' },
+        { token: 'keyword', foreground: 'ff79c6' },
+        { token: 'number', foreground: 'bd93f9' },
+        { token: 'string', foreground: 'f1fa8c' },
+        { token: 'function', foreground: '50fa7b' },
+        { token: 'identifier', foreground: 'f8f8f2' },
+        { token: 'delimiter', foreground: 'f8f8f2' },
+      ],
+      colors: {
+        'editor.foreground': '#f8f8f2',
+        'editor.background': '#151927',
+        'editorCursor.foreground': '#f8f8f0',
+        'editor.lineHighlightBackground': '#3b3e4a', // Cor mais clara para a linha destacada
+        'editorLineNumber.foreground': '#6272a4',
+        'editor.selectionBackground': '#44475a',
+        'editor.inactiveSelectionBackground': '#44475a80',
+        'editor.selectionHighlightBackground': '#44475a',
+      }
+    });
+    
     this.editorInstance = monaco.editor.create(this.editorContainer.nativeElement, {
       value: [
         'function helloWorld() {',
@@ -37,9 +60,19 @@ export class MonacoEditorComponent implements AfterViewInit, OnDestroy {
         '}'
       ].join('\n'),
       language: 'javascript',
-      theme: 'vs-dark',
-      automaticLayout: true
-    });
+      theme: 'draculaTheme',
+      automaticLayout: true,
+      renderLineHighlight: 'all', // Destaca tanto a linha quanto o número
+      renderLineHighlightOnlyWhenFocus: false // Sempre mostra o destaque da linha
+    }); 
+    
+    // Depois, aplique o tema
+    monaco.editor.setTheme('draculaTheme');
+  }
+
+  // Adicionando o método getValue para retornar o valor do editor
+  public getValue(): string {
+    return this.editorInstance ? this.editorInstance.getValue() : '';
   }
 
   ngOnDestroy() {
