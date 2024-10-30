@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from "@angular/common";
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-trails-list',
@@ -21,4 +22,10 @@ export class TrailsList {
     { id: 7, title: 'Exercise 7 - Squeaky Clean', completed: false },
     { id: 8, title: 'Exercise 8 - Elon\'s Toy Car', completed: false },
   ];
+
+  constructor(private router: Router) { }
+
+  navigateToCodePage(exerciseId: number): void {
+    this.router.navigate(['/code-page'], { queryParams: { exerciseId } });
+  }
 }

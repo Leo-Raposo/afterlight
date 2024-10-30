@@ -1,7 +1,8 @@
 <section class="exercise-list">
     <mat-list>
         <mat-list-item *ngFor="let exercise of exercises"
-            [ngClass]="{ 'active-exercise': exercise.completed, 'exercise-item': !exercise.completed }">
+            [ngClass]="{ 'active-exercise': exercise.completed, 'exercise-item': !exercise.completed }"
+            (click)="navigateToCodePage(exercise.id)">
             <div class="exercise-content">
                 <h3 class="exercise-title">{{ exercise.title }}</h3>
                 <img *ngIf="exercise.completed" loading="lazy"
