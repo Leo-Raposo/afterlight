@@ -31,7 +31,7 @@
     font-feature-settings: "liga" off, "clig" off;
     border-radius: 3px;
     background-color: #141723;
-    box-shadow: 0 0 10px rgba(162, 162, 162, 0.25);
+    box-shadow: 10px 0 0 rgba(162, 162, 162, 0.25);
     min-height: 32px;
     font: 500 11px/1 Inter, sans-serif;
     color: #fff;

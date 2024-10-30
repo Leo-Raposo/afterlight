@@ -8,7 +8,8 @@
             <div class="menu-container">
                 <div class="menu-section">
                     <div class="menu-group">
-                        <div class="menu-item-static">
+                        <div class="menu-item-static" (click)="navigateToDashboard()"
+                            [ngClass]="{'active': isActive('/dashboard')}">
                             <div class="menu-item-content">
                                 <img src="https://cdn.builder.io/api/v1/image/assets/488eda03dadc464d9f061e6f2fbf3e3d/b7e020b968426bdfc4b657d8270620718c443ea7396875ff711abbdec50c5be1?apiKey=488eda03dadc464d9f061e6f2fbf3e3d&"
                                     alt="Dashboard icon" class="menu-icon" />
@@ -17,19 +18,23 @@
                         </div>
 
                         <nav class="submenu-list">
-                            <button class="submenu-item" tabindex="1">
+                            <button class="submenu-item" (click)="navigateToDashboard()"
+                                [ngClass]="{'active': isActive('/dashboard')}" tabindex="1">
                                 <span class="submenu-text">Perfil</span>
                             </button>
 
-                            <button class="submenu-item" tabindex="2">
+                            <button class="submenu-item" (click)="navigateToTrails()"
+                                [ngClass]="{'active': isActive('/trails')}" tabindex="2">
                                 <span class="submenu-text">Trails</span>
                             </button>
 
-                            <button class="submenu-item" tabindex="3">
+                            <button class="submenu-item" (click)="navigateToBadges()"
+                                [ngClass]="{'active': isActive('/badges')}" tabindex="3">
                                 <span class="submenu-text">Badges</span>
                             </button>
 
-                            <button class="submenu-item" tabindex="4">
+                            <button class="submenu-item" (click)="navigateToRank()"
+                                [ngClass]="{'active': isActive('/rank')}" tabindex="4">
                                 <span class="submenu-text">Rank</span>
                             </button>
                         </nav>
