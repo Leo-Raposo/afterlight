@@ -12,9 +12,9 @@ import { CodeSubmissionService } from '../../services/code-submission.service';
 })
 export class CodeInteractionComponent {
   @ViewChild(MonacoEditorComponent) monacoEditor!: MonacoEditorComponent;
-  code: string = '';
-  user: string = '';
-  exerciseName: string = '';
+  codeText: string = '';
+  userName: string = '';
+  exercise: string = '';
   language: string = '';
 
   constructor(
@@ -22,26 +22,26 @@ export class CodeInteractionComponent {
     private route: ActivatedRoute // Injete o ActivatedRoute
   ) {
     this.route.queryParams.subscribe(params => {
-      this.user = params['userName'];
-      this.exerciseName = params['exercise'];
+      this.userName = params['userName'];
+      this.exercise = params['exercise'];
       this.language = params['language'];
     });
   }
 
   async submitCode(): Promise<void> {
-    this.code = this.monacoEditor.getValue();
+    this.codeText = this.monacoEditor.getValue();
     
-    console.log('Usuario:', this.user);
-    console.log('Nome do Exercicio:', this.exerciseName);
+    console.log('Usuario:', this.userName);
+    console.log('Nome do Exercicio:', this.exercise);
     console.log('Linguagem:', this.language);
-    console.log('Código capturado:', this.code);
+    console.log('Código capturado:', this.codeText);
 
     try {
       const response = await this.codeSubmissionService.submitCode(
-        this.user,            // Nome do usuário capturado da URL
-        this.exerciseName,    // Nome do exercício capturado da URL
+        this.userName,            // Nome do usuário capturado da URL
+        this.exercise,    // Nome do exercício capturado da URL
         this.language,        // Linguagem
-        this.code             // Código capturado
+        this.codeText             // Código capturado
       );
       console.log('Resposta do servidor:', response);
     } catch (error) {

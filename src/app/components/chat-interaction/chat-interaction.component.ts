@@ -29,7 +29,7 @@ export class ChatInteractionComponent implements AfterViewChecked, OnInit {
   private initializeChat(): void {
     this.messages.push({
       sender: 'assistant',
-      content: 'Bem-vindo ao chat! Como posso ajudar?'
+      content: 'Instruções para resolver o exercicio'
     });
   }
 
